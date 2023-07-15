@@ -1,0 +1,358 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body{
+ 
+    min-height: 100vh;
+    background-color: #9fa4c4;
+background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);
+
+    /* background-image: url(../img/Fondo/Bosque\ nocturno.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.Logo{width: 190px; height: 190px; border-radius: 50%; background-color: beige; border: 2px solid pink;}
+.Logo img{position: relative; top: 0px; left: 0px;}
+
+.logo{
+    font-size: 2em;
+    color: white;
+    user-select: none;
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    text-shadow: -2px -2px 3px black;
+}
+.navigation .oder {
+position: relative;
+font-size: 1.1em;
+color:white;
+text-decoration: none;
+font-weight: 500;
+margin-left: 40px;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin:right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin:left ;
+}
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+margin-left: 40px;
+transition: .5s;
+}
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #162938;
+}
+.logout{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+margin-left: 40px;
+transition: .5s;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.logout:hover{
+    background: #fff;
+    color: #162938;
+}
+.Productos{
+    color: white;
+    
+    margin-top: 300px;
+}
+.num{background-color: #893a8c93 !important;}
+.pagination a { color: #162938 !important;}
+
+/*  burbujas */
+.burbujas{height: 100%;position: relative;}
+.burbujas2{position: relative;bottom: 700px;right: 300px;}
+.burbuja{
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -50;
+    
+    animation: burbujas 3s linear infinite ;
+}
+.burbuja:nth-child(1){
+      width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+.burbuja:nth-child(2){
+    width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 5s;
+}
+.burbuja:nth-child(3){
+    width: 50px;
+  height: 50px;
+  left: 15%;
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
+.burbuja:nth-child(4){
+    width: 40px;
+  height: 40px;
+  left: 11%;
+  animation-duration: 3s;
+  animation-delay: 7s;
+}
+.burbuja:nth-child(5){
+    width: 63px;
+  height: 63px;
+  left: 75%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.burbuja:nth-child(6){
+    width: 34px;
+  height: 34px;
+  left: 50%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.burbuja:nth-child(7){
+    width: 40px;
+  height: 40px;
+  left: 47%;
+  animation-duration: 3s;
+  animation-delay: 4s;
+}
+.burbuja:nth-child(8){
+    width: 30px;
+  height: 30px;
+  left: 21%;
+  animation-duration: 3s;
+  animation-delay: 7s;
+}
+.burbuja:nth-child(9){
+    width: 20px;
+  height: 20px;
+  left: 89%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.burbuja:nth-child(10){
+    width: 50px;
+  height: 50px;
+  left: 95%;
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
+.burbuja:nth-child(11){
+  width: 50px;
+height: 50px;
+left:55%;
+animation-duration: 3s;
+animation-delay: 3s;
+}
+
+/* more burbujas */
+.burbuja2{
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: .1;
+
+  position: absolute;
+  bottom: 0;
+  
+  animation: burbujas 5s linear infinite ;
+}
+.burbuja2:nth-child(1){
+    width: 80px;
+  height: 80px;
+  left: 5%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+.burbuja2:nth-child(2){
+width: 50px;
+height: 50px;
+left: 35%;
+animation-duration: 3s;
+animation-delay: 5s;
+}
+.burbuja2:nth-child(3){
+  width: 50px;
+height: 50px;
+left: 15%;
+animation-duration: 3s;
+animation-delay: 3s;
+}
+.burbuja2:nth-child(4){
+  width: 40px;
+height: 40px;
+left: 51%;
+animation-duration: 3s;
+animation-delay: 7s;
+}
+.burbuja2:nth-child(5){
+  width: 63px;
+height: 63px;
+left: 35%;
+animation-duration: 3s;
+animation-delay: 2s;
+}
+.burbuja2:nth-child(6){
+  width: 34px;
+height: 34px;
+left: 50%;
+animation-duration: 3s;
+animation-delay: 2s;
+}
+.burbuja2:nth-child(7){
+  width: 40px;
+height: 40px;
+left: 47%;
+animation-duration: 3s;
+animation-delay: 4s;
+}
+.burbuja2:nth-child(8){
+  width: 30px;
+height: 30px;
+left: 21%;
+animation-duration: 3s;
+animation-delay: 7s;
+}
+.burbuja2:nth-child(9){
+  width: 20px;
+height: 20px;
+left: 89%;
+animation-duration: 3s;
+animation-delay: 2s;
+}
+.burbuja2:nth-child(10){
+  width: 50px;
+height: 50px;
+left: 95%;
+animation-duration: 3s;
+animation-delay: 3s;
+}
+.burbuja2:nth-child(11){
+width: 50px;
+height: 50px;
+left:55%;
+animation-duration: 3s;
+animation-delay: 3s;
+}
+@keyframes burbujas{
+  0%{ bottom:0; opacity: 0;}
+  50%{opacity: .2;}
+  100%{bottom: 100vh; opacity: 0;}
+}
+
+
+/* ADD-PRODUCTS  */
+.add-prod{margin-top: 300px;}
+
+
+/* COMBOS */
+.COMBO{
+    margin-top: 300px;
+    position: relative;
+    display: flex; 
+    flex-flow: row wrap;
+   
+
+}
+.COMBO .card-CO{
+  height: 300px;
+  margin: 50px 10px;
+  box-shadow: 5px 5px 20px black;
+  overflow: hidden; 
+     position: relative;
+}
+.COMBO img{
+  border-radius: 10px;
+  height:300px;
+  width: 380px;
+}
+.card-CO .intro{
+  height:50px;
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 2px;
+  background: rgb(27,27,27, .5);
+  color: white;
+  transition: .5s;
+}
+.card-CO .intro h2{
+  position: relative;
+ bottom: 10px;
+  font-size: 40px;
+}
+.card-CO .intro p{
+  font-size: 20px;
+  margin: 20px;
+  visibility: hidden;
+  opacity: 0;
+}
+.card-CO:hover{
+  cursor: pointer;
+}
+.card-CO:hover .intro{
+  height:260px;
+  bottom: 0.5px;
+  background: rgba(0, 0, 0, 0.427);
+}
+.card-CO:hover p{
+  opacity: 1;
+  visibility: visible;
+}
+.card-CO:hover img{
+  transform: scale(1.1) rotate(-3deg);
+}

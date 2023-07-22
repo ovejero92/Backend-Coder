@@ -1,6 +1,7 @@
 import { Router } from "express";
 import passport from "passport";
 import { JWT_COOKIE_NAME } from '../utils.js'
+import logger from '../logger.js'
 
 const router = Router()
 
@@ -14,7 +15,7 @@ router.post('/register', passport.authenticate('register', { failureRedirect: '/
     res.redirect('/session/login')
 })
 router.get('/failregister', (req, res) => {
-    console.log('Fail Strategy');
+    logger.error('Fail Strategy');
     res.send({ error: "Failed" })
 })
 

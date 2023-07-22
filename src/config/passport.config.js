@@ -5,6 +5,7 @@ import local from "passport-local"
 import passport_jwt from 'passport-jwt'
 import UserModel from "../dao/models/user.model.js";
 import { createHash, isValidPassword, generateToken, extractCookie, JWT_PRIVATE_KEY } from '../utils.js'
+import logger from '../logger.js'
 
 const LocalStrategy = local.Strategy
 const JWTStrategy = passport_jwt.Strategy
@@ -17,7 +18,7 @@ const initializePassport = () => {
         clientSecret: '293eb8e8e3954039acd5848ceabba8a743e64c89',
         callbackURL: 'http://localhost:8080/session/githubcallback'
       }, async(accessTOken, refreshToken, profile, done) => {
-          console.log(profile)
+          logger.info(profile)
           try {
          const user = await UserModel.findOne({ email: profile._json.email })
            if(user) return done (null, user)
@@ -43,7 +44,7 @@ const initializePassport = () => {
         try {
             const user = await UserModel.findOne({email: username})
             if(user) {
-                console.log("User already exits");
+                logger.error("User already exits");
                 return done(null, false)
             }
 
@@ -70,7 +71,7 @@ const initializePassport = () => {
         try {
             const user = await UserModel.findOne({email: username})
             if(!user) {
-                console.log("User dont exist");
+                logger.error("User dont exist");
                 return done(null, user)
             }
 
@@ -97,7 +98,7 @@ const initializePassport = () => {
         clientSecret: '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',
         callbackURL: 'http://localhost:8080/auth/google'
        }, async(accessTOken, refreshToken, profile, done) => {
-        console.log(profile)
+        logger.info(profile)
         try {
        const user = await UserModel.findOne({ googleId: profile.id })
          if(user) return done (null, user)

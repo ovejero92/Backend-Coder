@@ -10,11 +10,13 @@ import cookieParser from "cookie-parser"
 import initializePassport from "./config/passport.config.js";
 import dotenv from 'dotenv'
 import { Command } from "commander";
+import logger from './logger.js'
 
 import __dirname from "./utils.js"
 import run from "./run.js";
 
 const app = express()
+
 const program = new Command()
 
 app.use(express.json())
@@ -49,7 +51,7 @@ mongoose.connect(MONGO_URI, {
     dbName: MONGO_DB_NAME
 }, (error) => {
     if(error){
-        console.log("DB No conected...")
+        logger.error(`no se pudo conectar con la Base de datos: ${MONGO_DB_NAME}`)
         return
     }
     
@@ -57,9 +59,9 @@ mongoose.connect(MONGO_URI, {
 
      const PORT = process.env.PORT || 8080
 
-    const httpServer = app.listen(PORT, () => console.log(`Puerto n° ${PORT}`))
+    const httpServer = app.listen(PORT, () => {logger.info(`Puerto n° ${PORT}`)})
     const socketServer = new Server(httpServer)
-    httpServer.on("error", (e) => console.log("ERROR: " + e))
+    httpServer.on("error", (e) => logger.fatal("ERROR: " + e))
 
     run(socketServer, app)
 })

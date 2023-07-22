@@ -5,6 +5,7 @@ import messagesModel from "./dao/models/messages.model.js";
 import productViewsRouter from './routes/products.views.router.js'
 import sessionRouter from './routes/session.router.js'
 import { passportCall } from "./utils.js";
+import logger from './logger.js'
 
 const run = (socketServer, app) => {
     app.use((req, res, next) => {
@@ -22,7 +23,7 @@ const run = (socketServer, app) => {
 
 
     socketServer.on("connection", socket => {
-        console.log("New client connected")
+        logger.info("New client connected")
         socket.on("message", async data => {
         await messagesModel.create(data)
         let messages = await messagesModel.find().lean().exec()

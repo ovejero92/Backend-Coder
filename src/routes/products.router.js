@@ -1,5 +1,6 @@
 import {Router} from "express"
 import productModel from "../dao/models/products.model.js"
+import logger from '../logger.js'
 
 const router = Router()
 
@@ -54,7 +55,7 @@ router.post("/", async (req, res) => {
             productAdded
         })
     } catch (error) {
-        console.log(error)
+        logger.error(error)
         res.json({
             error
         })

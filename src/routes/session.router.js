@@ -29,6 +29,7 @@ router.post('/login', passport.authenticate('login', { failureRedirect: '/sessio
     if (!req.user) {
         return res.status(400).send({ status: "error", error: "Invalid credentiales" })
     }
+   
     res.cookie(JWT_COOKIE_NAME, req.user.token).redirect('/products')
 })
 router.get('/github', passport.authenticate('github', { scope:["user:email"]}), (req, res) =>{})

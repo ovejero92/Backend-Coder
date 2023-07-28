@@ -6,6 +6,7 @@ import passport_jwt from 'passport-jwt'
 import UserModel from "../dao/models/user.model.js";
 import { createHash, isValidPassword, generateToken, extractCookie, JWT_PRIVATE_KEY } from '../utils.js'
 import logger from '../logger.js'
+import CartModel from "../dao/models/cart.model.js";
 
 const LocalStrategy = local.Strategy
 const JWTStrategy = passport_jwt.Strategy
@@ -21,11 +22,14 @@ const initializePassport = () => {
           logger.info(profile)
           try {
          const user = await UserModel.findOne({ email: profile._json.email })
-           if(user) return done (null, user)
+           if(user) {return done (null, user)}
   
            const newUser = await UserModel.create({
               first_name: profile._json.name,
               email: profile._json.email,
+              age:0,
+              email:profile._json.email,
+              password:""
            })
   
            return done(null, newUser)
@@ -40,23 +44,24 @@ const initializePassport = () => {
         usernameField: 'email'
     }, async (req, username, password, done) => {
 
-        const {first_name, last_name, email, age } = req.body
+        const {first_name, last_name, email, age} = req.body
         try {
             const user = await UserModel.findOne({email: username})
             if(user) {
                 logger.error("User already exits");
                 return done(null, false)
             }
-
+            const cartforNewUser = await CartModel.create({})
             const newUser = {
                 first_name,
                 last_name,
                 email,
                 age,
-                password: createHash(password)
+                password: createHash(password),
+                cart: cartforNewUser._id,
+                role: (email === "ovejero.gustavo92@gmail.com") ? 'admin' : 'user'
             }
             const result = await UserModel.create(newUser)
-            
             return done(null, result)
         } catch (error) {
             return done("[LOCAL] Error al obtener user " + error)
@@ -66,7 +71,8 @@ const initializePassport = () => {
     }))
 
     passport.use('login', new LocalStrategy({
-        usernameField: 'email'
+        usernameField: 'email',
+        userrole:'role'
     }, async (username, password, done) => {
         try {
             const user = await UserModel.findOne({email: username})
@@ -74,7 +80,8 @@ const initializePassport = () => {
                 logger.error("User dont exist");
                 return done(null, user)
             }
-
+            
+  
             if(!isValidPassword(user, password)) return done(null, false)
 
             const token = generateToken(user)

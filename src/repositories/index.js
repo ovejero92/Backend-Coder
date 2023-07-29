@@ -1,4 +1,4 @@
-import { Product } from '../dao/factory.js'
+import  Product  from '../dao/factory.js'
 
 import ProductRepository from './product.repository.js'
 

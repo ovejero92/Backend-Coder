@@ -8,12 +8,15 @@ import MongoStore from "connect-mongo";
 import passport from "passport";
 import cookieParser from "cookie-parser"
 import initializePassport from "./config/passport.config.js";
+import config from './config/config.js'
 import dotenv from 'dotenv'
 import { Command } from "commander";
 import logger from './logger.js'
 
 import __dirname from "./utils.js"
 import run from "./run.js";
+
+export const PORT = config.apiserver.port
 
 const app = express()
 

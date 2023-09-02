@@ -20,6 +20,15 @@ export const isValidPassword = (user, password) => {
     return bcrypt.compareSync(password, user.password)
 }
 
+export const generateRandomString = (num) => {
+    return [...Array(num)].map(() => {
+        const randomNum = ~~(Math.random() *36); // el 36 son todas las letras del alfabeto mas los numeros en total son 36
+        return randomNum.toString(36); // asi lo hacemos con letras y numeros
+    })
+    .join('')
+    .toUpperCase(); // esto sig que esta todo en mayuscula 
+}
+
 export const generateToken = user => {
     return jwt.sign({ user }, JWT_PRIVATE_KEY, { expiresIn: '24h'})
 }

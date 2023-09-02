@@ -1,5 +1,5 @@
-import CartModel from "../dao/models/cart.model.js";
-import productModel from "../dao/models/products.model.js";
+import CartModel from "../models/cart.model.js";
+import productModel from "../models/products.model.js";
 
 export const getProductsFromCart = async (req , res) => {
     try{ 

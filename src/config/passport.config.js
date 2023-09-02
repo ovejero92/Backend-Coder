@@ -3,10 +3,10 @@ import GitHubStrategy from "passport-github2"
 import googleStrategy from "passport-google-oauth20"
 import local from "passport-local"
 import passport_jwt from 'passport-jwt'
-import UserModel from "../dao/models/user.model.js";
+import UserModel from "../models/user.model.js";
 import { createHash, isValidPassword, generateToken, extractCookie, JWT_PRIVATE_KEY } from '../utils.js'
 import logger from '../logger.js'
-import CartModel from "../dao/models/cart.model.js";
+import CartModel from "../models/cart.model.js";
 
 const LocalStrategy = local.Strategy
 const JWTStrategy = passport_jwt.Strategy
@@ -44,7 +44,7 @@ const initializePassport = () => {
         usernameField: 'email'
     }, async (req, username, password, done) => {
 
-        const {first_name, last_name, email, age} = req.body
+        const {first_name, last_name, email, telphone} = req.body
         try {
             const user = await UserModel.findOne({email: username})
             if(user) {
@@ -56,7 +56,7 @@ const initializePassport = () => {
                 first_name,
                 last_name,
                 email,
-                age,
+                telphone,
                 password: createHash(password),
                 cart: cartforNewUser._id,
                 role: (email === "ovejero.gustavo92@gmail.com") ? 'admin' : 'user'

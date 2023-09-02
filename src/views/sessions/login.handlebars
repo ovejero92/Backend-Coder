@@ -5,209 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <style>
-    
-  @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
-  }
-  
-  :root {
-    --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
-  }
-  
-  
   body {
+    height: 800px;
+    width: 900px;
+    margin: 0 auto;
     min-height: 100vh;
-    background: #212534;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+   /*  background-color: #9fa4c4;
+    background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);*/
+    background-image: url("/img/Fondo/Fondo-drinks.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  
-  
-  .card {
-    background: #191c29;
-    width: var(--card-width);
-    height: var(--card-height);
-    padding: 3px;
+/*LOGIN*/.wrapper
+{
     position: relative;
     top: 100px;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    color: rgb(6, 165, 239);
-    cursor: pointer;
-    font-family: cursive;
-  }
-  
-  .card:hover {
-    color: #4e00c2;
-    transition: color 1s;
-  }
-  .card:hover:before, .card:hover:after {
-    animation: none;
-    opacity: 0;
-  }
-  
-  
-  .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      position: absolute;
-      z-index: -1;
-      top: -1%;
-      left: -2%;
-      animation: spin 2.5s linear infinite;
-  }
-  
-  .card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
     margin: 0 auto;
-    transform: scale(0.8);
-   filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      --rotate: 0deg;
-    }
-    100% {
-      --rotate: 360deg;
-    }
-  }
-  
-  a {
-    color: #4e00c2;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin-top: 2rem;
-  }
-  a:hover{
-   color:  rgb(6, 165, 239);
-  }
-  /*GRAL*/
-  header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-}
-.logo{
-    font-size: 2em;
-    color: white;
-    /* user-select: none; */
-}
-.navigation .oder {
-position: relative;
-font-size: 1.1em;
-color:white;
-text-decoration: none;
-font-weight: 500;
-margin-left: 40px;
-}
-.navigation a::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    transform-origin:right;
-    transform: scaleX(0);
-    transition: transform .5s;
-}
-.navigation a:hover::after{
-    transform: scaleX(1);
-    transform-origin:left ;
-}
-.navigation .btnLogin-popup{
-    width: 130px;
-    height: 50px;
+    width: 400px;
+    height: 640px;
     background: transparent;
-    border: 2px solid white;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: white;
-    font-weight: 500;
-margin-left: 40px;
-transition: .5s;
-}
-.navigation .btnLogin-popup:hover{
-    background: #fff;
-    color: #162938;
-}
-.logout{
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid white;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: white;
-    font-weight: 500;
-margin-left: 40px;
-transition: .5s;
-}
-.logout:hover{
-    background: #fff;
-    color: #162938;
-}
-/*LOGIN*/
-.wrapper{
-    position: relative;
+    border: 2px solid rgba(255,255,255, .5);
     border-radius: 20px;
-    height: 100%;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0 , 0, .5);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    z-index: 2;
         }
-
-.wrapper .icon-close{
+.wrapper .form-box
+{
+     width: 100%;
+     padding: 40px;
+        }
+.wrapper .icon-close
+{
  position: absolute;
  top: 0;
  right: 0;
 width: 45px;
  height: 45px;
+ background:#162938 ;
  font-size: 2em;
  color: #fff;
  display: flex;
@@ -218,10 +56,9 @@ width: 45px;
  z-index: 1;
  }
  .form-box h2{
-  font-size: 1.8em;
+  font-size: 2em;
+  color: #162938;
   text-align: center;
-  position: relative;
-  bottom: 30px;
  }
  .input-box{
   position: relative;
@@ -236,13 +73,14 @@ width: 45px;
   left: 5px;
   transform: translateY(-50%);
   font-size: 1em;
+ color: #162938;
   font-weight: 500;
   pointer-events: none;
   transition: .5s;
  }
  .input-box input:focus~label,
  .input-box input:valid~label{
-  top: -8px;
+  top: -5px;
  }
  .input-box input{
   width: 100%;
@@ -251,7 +89,7 @@ width: 45px;
   border: none;
   outline: none;
   font-size: 1em;
-  color:beige;
+  color: #162938;
   font-weight: 600;
   padding: 0 35px 0 5px;
  }
@@ -259,19 +97,23 @@ width: 45px;
   position: absolute;
   right: 8px;
   font-size: 1.2em;
-  color: rgb(6, 165, 239);
+  color: #162938;
   line-height: 57px;
  }
 .remember-forgot {
  font-size: .9em;
- color: rgb(6, 165, 239);
+ color: #162938;
  font-weight: 500;
  margin: -15px 0 15px;
  display: flex;
  justify-content: space-between;
 }
-
+.remember-forgot label input{
+ accent-color: #162938;
+ margin-right: 3px;
+}
 .remember-forgot a{
+ color: #162938;
  text-decoration: none;
 }
 .remember-forgot a:hover{
@@ -292,24 +134,23 @@ height: 45px;
 }
 .login-register {
  font-size: .9em;
+ color: #162938;
  text-align: center;
  font-weight: 500;
  margin: 25px 0 10px;
 }
 .login-register p a {
-
+color: #162938;
 text-decoration: none;
 font-weight: 600;
 }
 .login-register p a:hover{
  text-decoration: underline;
- color: blueviolet;
 }
-
    </style>
 </head>
 <body> 
-  <div class="card">
+  
       <div class="wrapper">
     
   <span class="icon-close"><ion-icon name="close"></ion-icon></span>
@@ -343,6 +184,6 @@ font-weight: 600;
 
       </div>
       
-   </div>
+  
 </body>
 </html>

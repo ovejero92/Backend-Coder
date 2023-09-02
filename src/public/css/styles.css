@@ -34,6 +34,7 @@ header{
     top: 100px;
     text-shadow: -2px -2px 3px black;
 }
+.contact p, .contact h4{text-align: center;}
 .navigation .oder {
 position: relative;
 font-size: 1.1em;
@@ -81,16 +82,37 @@ transition: .5s;
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgb(18, 16, 16);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: white;
+    color: rgb(215, 46, 220);
     font-weight: 500;
-margin-left: 40px;
+    margin-top: 300px;
+margin-left: 120px;
+margin-right: 40px;
 transition: .5s;
 }
+.logout a{
+  color: brown;
+  margin-left: 2px;
+}
+.list-contacto{
+  display: flex;
+  border-top: rgba(42, 40, 40, 0.616) solid 2px;
+  border-bottom:  rgba(42, 40, 40, 0.616) solid 2px;
+}
+.list-contacto i{
+  margin-top: 11px; 
+  font-size: 20px;
+
+}
+.list-contacto a{
+  margin-left: 7px;
+  font-size: 18px;
+}
+.bg-resalted{background-color: rgba(232, 232, 38, 0.666);}
 a{
     color: white;
     text-decoration: none;
@@ -106,6 +128,90 @@ a{
 }
 .num{background-color: #893a8c93 !important;}
 .pagination a { color: #162938 !important;}
+
+.cont-user-img{
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 30px;
+}
+.image-area{
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: grey;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.image-area .icon-user{
+  font-size: 100px;
+}
+.image-area h3{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.image-area p{
+  color: #999;
+}
+.image-area p span {
+  font-weight: 600;
+}
+.image-area img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 100;
+}
+.image-area::before {
+  content: attr(data-img);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: all .3s ease;
+  z-index: 200;
+}
+.image-area.active:hover::before{
+  opacity: 1;
+}
+.select-image {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 15px;
+  background: blue;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.select-image:hover{
+  background: darkblue;
+}
+
 
 /*  burbujas */
 .burbujas{height: 100%;position: relative;}
@@ -345,7 +451,7 @@ animation-delay: 3s;
   cursor: pointer;
 }
 .card-CO:hover .intro{
-  height:260px;
+  height:300px;
   bottom: 0.5px;
   background: rgba(0, 0, 0, 0.427);
 }
@@ -356,3 +462,6 @@ animation-delay: 3s;
 .card-CO:hover img{
   transform: scale(1.1) rotate(-3deg);
 }
+.card-CO div button{border: none; border-radius: 20px; background-color: #162938; padding: 5px;}
+.card-CO div button a{color: beige;}
+.Carri{margin-left: 10px;}

@@ -62,7 +62,7 @@ mongoose.connect(MONGO_URI, {
 
      const PORT = process.env.PORT || 8080
 
-    const httpServer = app.listen(PORT, () => {logger.info(`Puerto n° ${PORT}`)})
+    const httpServer = app.listen(PORT, () => {logger.info(`Entra a: http://127.0.0.1:${PORT}/session/login`)})
     const socketServer = new Server(httpServer)
     httpServer.on("error", (e) => logger.fatal("ERROR: " + e))
 

@@ -2,18 +2,19 @@ import config from '../config/config.js'
 
 // export let Product
 export default class Product {
-    constructor(id, name, price, description) {
+    constructor(id, title, price, stock, category) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.price = price;
-        this.description = description;
+        this.stock = stock;
+        this.category = category;
     }
 }
 
 switch (config.persistence) {
     case 'MONGO':
-        const { default: ProductMongoDAO} = await import('./mongo/product.mongo.dao.js')
-        Product = ProductMongoDAO
+        const { default: Product} = await import('./mongo/product.mongo.dao.js')
+        Product = Product
         break;
 
     default:

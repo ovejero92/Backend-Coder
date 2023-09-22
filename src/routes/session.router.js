@@ -16,6 +16,9 @@ router.get('/register', (req, res) => {
 router.post('/register', passport.authenticate('register', { failureRedirect: '/session/failregister' }), async (req, res) => {
     res.redirect('/session/login')
 })
+router.get('/profile', (req, res) => {
+    res.render('sessions/profile', req.session.user)
+})
 router.get('/failregister', (req, res) => {
     logger.error('Fail Strategy');
     res.send({ error: "Failed" })

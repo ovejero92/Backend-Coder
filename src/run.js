@@ -1,6 +1,6 @@
-import productRouter from "./routes/products.router.js"
+// import productRouter from "./routes/products.router.js"
 import cartRouter from "./routes/cart.router.js"
-import chatRouter from "./routes/chat.router.js"
+// import chatRouter from "./routes/chat.router.js"
 import messagesModel from "./models/messages.model.js";
 import productViewsRouter from './routes/products.views.router.js'
 import sessionRouter from './routes/session.router.js'
@@ -17,9 +17,9 @@ const run = (socketServer, app) => {
     app.use("/session", sessionRouter)
 
 
-    app.use("/api/products", productRouter)
+    // app.use("/api/products", productRouter)
     app.use("/api/carts", cartRouter)
-    app.use("/api/chat", chatRouter)
+    // app.use("/api/chat", chatRouter)
 
 
     socketServer.on("connection", socket => {

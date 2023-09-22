@@ -1,9 +1,9 @@
 import {PORT} from '../app.js'
-import { getProducts } from './product.controller.js'
+import { ProductService } from '../repositories/index.js'
 import { getProductsFromCart } from './cart.controller.js'
 
 export const viewProductsController = async (req, res) => {
-    const result = await getProducts (req,res)
+    const result = await ProductService.getAllPaginate(req,PORT)
     if(result.statusCode === 200) {
         const totalPages = []
         let link
@@ -27,7 +27,7 @@ export const viewProductsController = async (req, res) => {
         } else {res.status(result.statusCode).json({status:'error', error:result.response.error})}
     }
 export const viewRealTimeProductsController = async (req,res) => {
-    const result = await getProducts(req,res)
+    const result = await ProductService.getAllPaginate(req,PORT)
     if(result.statusCode === 200){res.render('realTimeProducts', {products:result.response.payload})}
     else{res.status(result.statusCode).json({status:'error', error:result.response.error})}
 }

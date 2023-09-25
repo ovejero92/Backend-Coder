@@ -1,0 +1,33 @@
+{"timestamp":"24/09/2023, 19:08","error":"Missing credentials for \"PLAIN\""}
+{"timestamp":"24/09/2023, 19:11","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/session/githubcallback?code=eb29b397d2326fa4495a"}
+{"timestamp":"24/09/2023, 19:44","error":"invalid signature"}
+{"timestamp":"24/09/2023, 19:45","error":"invalid signature"}
+{"timestamp":"24/09/2023, 19:45","error":"invalid signature"}
+{"timestamp":"24/09/2023, 19:48","error":"invalid signature"}
+{"timestamp":"24/09/2023, 19:50","error":"Missing credentials for \"PLAIN\""}
+{"timestamp":"24/09/2023, 19:55","error":"Missing credentials for \"PLAIN\""}
+{"timestamp":"24/09/2023, 19:57","error":"Missing credentials for \"PLAIN\""}
+{"timestamp":"24/09/2023, 20:22","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials h11-20020a63574b000000b0056368adf5e2sm6626656pgm.87 - gsmtp"}
+{"timestamp":"24/09/2023, 20:29","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials li11-20020a170903294b00b001b89466a5f4sm7412034plb.105 - gsmtp"}
+{"timestamp":"24/09/2023, 20:35","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/session/githubcallback?code=49cadad1e47de796f4f7"}
+{"timestamp":"24/09/2023, 20:35","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials q17-20020a637511000000b00570574feda0sm6621569pgc.19 - gsmtp"}
+{"timestamp":"24/09/2023, 20:37","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials b2-20020aa78702000000b0068620bee456sm6748602pfo.209 - gsmtp"}
+{"timestamp":"24/09/2023, 20:38","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials fk3-20020a056a003a8300b00690daae925bsm6792711pfb.51 - gsmtp"}
+{"timestamp":"24/09/2023, 20:39","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/profile"}
+{"timestamp":"24/09/2023, 20:40","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/newUser"}
+{"timestamp":"24/09/2023, 21:00","error":"invalid signature"}
+{"timestamp":"24/09/2023, 21:01","error":"invalid signature"}
+{"timestamp":"24/09/2023, 21:02","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/session/githubcallback?code=b665350ccc9e6d2608e8"}
+{"timestamp":"24/09/2023, 21:02","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/session/githubcallback?code=6f35f237650dc2381bdf"}
+{"timestamp":"24/09/2023, 21:07","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials bg2-20020a056a001f8200b0068fe76cdc62sm7017691pfb.93 - gsmtp"}
+{"timestamp":"24/09/2023, 21:08","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials x9-20020a056a00270900b00690fdeb5c07sm6992528pfv.13 - gsmtp"}
+{"timestamp":"24/09/2023, 21:17","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials q18-20020a638c52000000b0058264a3c942sm1219456pgn.69 - gsmtp"}
+{"timestamp":"24/09/2023, 21:20","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials fn1-20020a056a002fc100b00692e9bf82fcsm744626pfb.182 - gsmtp"}
+{"timestamp":"24/09/2023, 21:34","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials v10-20020a1709028d8a00b001c5fda4d3eesm3394250plo.261 - gsmtp"}
+{"timestamp":"24/09/2023, 21:34","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials fn1-20020a056a002fc100b00692e9bf82fcsm755226pfb.182 - gsmtp"}
+{"timestamp":"24/09/2023, 21:34","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials u16-20020a170902e81000b001b898595be7sm7375015plg.291 - gsmtp"}
+{"timestamp":"24/09/2023, 21:40","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/img/logo-canguro.ico"}
+{"timestamp":"24/09/2023, 21:40","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/img/Logo-canguro.ico"}
+{"timestamp":"24/09/2023, 22:04","error":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials iz19-20020a170902ef9300b001c3bc7b8816sm7463768plb.284 - gsmtp"}
+{"timestamp":"25/09/2023, 01:20","error":"Intentaron ingresar a una Pagina No Existente.!! - Error 404 | Método: GET en la URL: undefined:8080/logoutadmin"}
+{"timestamp":"25/09/2023, 04:19","error":"Error al intentar iniciar el Servidor porque el puerto 8080 está en uso por otro proceso.!"}

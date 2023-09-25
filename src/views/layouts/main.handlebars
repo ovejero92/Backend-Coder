@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="shortcut icon" href="img/icons/animal_kangaroo_icon_159044.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
 </head>
 
 <body>
-
-       {{#if user}}  
-       <header>
-
-            {{#if user}}
-            <div class="Logo"><img src="img/Logo/Logo-canguro.webp" alt="logo"  height="190" ></div>
-            
-            {{/if}}
-        
-          <nav class="navbar">
-  <div class="container-fluid navigation">
-    <a href="#" class="oder">Home</a>
-                 <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-            {{!-- <a href="/session/login"><button class="btnLogin-popup">Login</button></a> --}}
-          
-              {{!-- Contacto --}}
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <ul class="nav nav-tabs">
+        <li class="Lo">           
+            <div class="Logo"><img src="/img/Logo-canguro.webp" alt="logo"  height="170" ></div>
+        </li>
+        <li class="nav-item firs">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/products">Productos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link{{#ifEqual cart.length 0}} disabled{{/ifEqual}}" href="/carts">Carrito <i
+                    class="fa fa-cart-plus"></i></a>
+        </li>
+        {{#if user}}
+        <li class="nav-item ">
+            <a class="nav-link premium" href="/users/profile/documents">Premium</a>
+        </li>
+        {{/if}}
+    <li>                 {{!-- Contacto --}}
+    <button class="navbar-toggler usr" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bt-cont">{{#ifEqual user.role "admin"}}<i class="fa-solid fa-users-gear"></i>{{else}}<i class="fa-regular fa-address-card"></i>{{/ifEqual}}{{#if user.premium}}<i class="fa-solid fa-user-tie"></i>{{/if}}
+</span>
+    </button></li> 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Contacto</h5>
@@ -43,141 +46,115 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item contact icon-user">
-
-            <div class="cont-user-img">
-              <input type="file" id="file" accept="image/*" >
-              <div class="image-area" >
-                <i class="fa-solid fa-user icon-user"></i>
-                <h3>Descarga tu imagen</h3>
-                <p>no debe pasarse de los <span>2mb</span></p>
-               
-              </div>
-              <button class="select-image">Select Image</button>
+           <!-- darkmode -->
+            <li class="nav-item">
+            <a class="nav-link">
+                Dark Mode
+                <button class="darkModeSwitch" id="switch">
+                    <span></span>
+                    <span></span>
+                </button>
+            </a>
+            </li>
+           <!-- FIN-DARKMODE -->
+            <div class="inf-cont">
+            <div>
+                <img src="{{user.photo}} {{user.user.photo}}" alt="Corona" class="foto-perfil">
             </div>
-            <h4>{{user.first_name}} {{user.last_name}}</h4>
+            <div class="box-info-contact">
+                <h4>{{user.first_name}} {{user.last_name}}</h4>
             <p>{{user.email}}</p>
-            <p>{{user.telphone}}</p>
+            <p>{{user.phone}}</p>
+            <button><a href="/users/profile">Edit</a></button>
+            </div>
           </li>
-          <li class="nav-item list-contacto">
-           <i class="fa-solid fa-envelope-open-text"></i> <a class="nav-link" href="#">Mis pedidos</a>
-          </li>
-            <li class="nav-item list-contacto">
-           <i class="fa-solid fa-ticket"></i> <a class="nav-link" href="#">Mis cupones</a>
-          </li>
-            <li class="nav-item list-contacto bg-resalted">
-           <i class="fa-solid fa-gift"></i> <a class="nav-link" href="#">Invitá a tus amigos</a>
-          </li>
-            <li class="nav-item list-contacto">
-           <i class="fa-solid fa-comments"></i> <a class="nav-link" href="#">Consulta de mis ordenes</a>
-          </li>
-            <li class="nav-item list-contacto">
-           <i class="fa-solid fa-circle-question"></i> <a class="nav-link" href="#">Preguntas frecuentes</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <button class="logout"><i class="fa-solid fa-power-off fa-sm" style="color: #640707;"></i><a href="/session/logout">Cerrar Sesión</a></button>
-        </ul>
+          </div>
+        {{#if user.role}}
+        {{#ifEqual user.role "admin"}}
+        <li class="nav-item">
+            <a class="nav-link green" href="/admin_panel">Panel Administrador</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link violet" href="/docs-api">Documentar API con Swagger</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/mockingproducts">Crear 100 Productos con Mocking</a>
+        </li>
+        {{/ifEqual}}
+        {{/if}}
+        {{#if user}}
+        {{#if user.premium}}
+        <li class="nav-item">
+            <a class="nav-link premium">Premin </a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link green">Basic</a>
+        </li>
+        {{/if}}
 
+        <li class="nav-item ">
+            <a class="nav-link red" href="/logout">Logout <i class="fa fa-sign-out"></i> </a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link green" href="/login">Login <i class="fa fa-sign-in"></i></a>
+        </li>
+        {{/if}}
+        </ul>
       </div>
     </div>
+    </ul>
     {{!-- end --}}
-    {{!-- Carrito --}}
-    <button class="navbar-toggler Carri" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <img src="img/icons/Carrito-icon.png" alt="" height="30px" >
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrito</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item contact">
-            <h4>{{user.first_name}} {{user.last_name}}</h4>
-            <p>{{user.email}}</p>
-            <p>{{user.telphone}}</p>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-{{!-- end --}}
-    
-  </div>
-</nav>
-          {{!-- {{#if user}}<div class="Logo"><img src="img/Logo/Logo-canguro.webp" alt="logo"  height="190" ></div>{{/if}}
-         <h2 class="logo">{{user.first_name}}</h2>
-         <nav class="navigation">
-            <a href="#" class="oder">Home</a>
-            <a href="#" class="oder">about</a>
-            <a href="#" class="oder">contact</a>
-            <a href="/session/login"><button class="btnLogin-popup">Login</button></a>
-              {{#if user}} <button class="logout"><a href="/session/logout">Logout</a></button>{{/if}}
-         </nav> --}}
-       </header>    
-{{/if}}  
-        {{{body}}}
-        <div class="burbujas">
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        <div class="burbuja"></div>
-        </div>
+    {{{ body }}}
 
-      <div style="position: relative;"> 
-  <i class="fa-solid fa-comments chat"></i>
-  <div class="chat_box bod">
-    <div class="bod hr">
-    <h4>CHAT</h4>
-    <hr />
-   
-      <i id="username"></i>: <span  id="messageLogs"></span>
-    <hr />
+
+    <div id="history"></div>
+    <div class="footer">
+        <footer class='top'>
+            <a href='/'>
+                <img src="/img/Logo-canguro.webp" alt='Canguro drinks' />
+            </a>
+        </footer>
+        <footer class='bottom'>
+            <div class='legal'>
+                <p>
+                    &copy; Gustavo Ovejero | Entrega Final | Curso de BackEnd en CoderHouse | Comisión #39755 | Año
+                    <span id="anio"></span>
+                </p>
+            </div>
+            <section class='iconos-social links'>
+                <img src="/assets/icons/whatsapp.svg" alt="icono" />
+                <img src="/assets/icons/instagram.svg" alt="icono" />
+                <img src="/assets/icons/facebook.svg" alt="icono" />
+            </section>
+        </footer>
+        {{#if user}}
+        <a href="/chat">
+          <i class="fa-solid fa-comments chat"></i>
+        </a>
+        {{/if}}
     </div>
-    <div class="send"><input id="chatbox" type="text"> <i class="fa-regular fa-paper-plane"></i></div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/chat.js"></script>
-  </div>
-  </div> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+    <script src="/js/darck.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const spanAnio = document.getElementById("anio");
+            const fechaActual = new Date();
+            const anioActual = fechaActual.getFullYear();
+            spanAnio.textContent = anioActual;
+        });
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/5a2235372b.js" crossorigin="anonymous"></script>

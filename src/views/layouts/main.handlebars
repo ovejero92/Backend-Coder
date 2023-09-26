@@ -59,13 +59,13 @@
            <!-- FIN-DARKMODE -->
             <div class="inf-cont">
             <div>
-                <img src="{{user.photo}} {{user.user.photo}}" alt="Corona" class="foto-perfil">
+                        {{#if user}}<img src="{{user.photo}} {{user.user.photo}}" alt="Corona" class="foto-perfil"> {{/if}}
             </div>
             <div class="box-info-contact">
                 <h4>{{user.first_name}} {{user.last_name}}</h4>
             <p>{{user.email}}</p>
             <p>{{user.phone}}</p>
-            <button><a href="/users/profile">Edit</a></button>
+           {{#if user}} <button><a href="/users/profile">Edit</a></button> {{/if}}
             </div>
           </li>
           </div>

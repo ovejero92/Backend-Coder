@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import loggers from '../../config/logger.js'
 import customError from '../../services/error.log.js';
 
-const mongoConnection = 'mongodb+srv://Kanguro:Cyg190921@cangaru.m6wo2de.mongodb.net/';
+const mongoConnection = 'mongodb+srv://Kanguro:Cyg190921@cangaru.m6wo2de.mongodb.net/Kanguro';
 const mongoDatabase = 'Kanguro';
 
 export default class MongoClient {

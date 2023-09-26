@@ -1,5 +1,5 @@
 import winston from 'winston'
-import config from './config.js';
+// import config from './config.js';
 
 
 const customWinstonOptions = {
@@ -25,7 +25,7 @@ const customWinstonOptions = {
 
 winston.addColors(customWinstonOptions.colors)
 
-const prod = config.log.level === 'PROD'
+const prod = 'PROD' === 'PROD'
 
 const createLogger = () => {
     if (prod) {
@@ -55,6 +55,6 @@ const createLogger = () => {
     }
 }
 
-const loggers = createLogger(config.log.level)
+const loggers = createLogger('PROD')
 
 export default loggers
